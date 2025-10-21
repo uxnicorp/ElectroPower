@@ -620,9 +620,7 @@
   background: linear-gradient(
     90deg,
     var(--negro-tecnico) 0%,
-    var(--negro-tecnico) 40%,
-    var(--celeste-base) 50%,
-    var(--negro-tecnico) 60%,
+
     var(--negro-tecnico) 100%
   );
   background-size: 200% 100%;
