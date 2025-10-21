@@ -1,0 +1,308 @@
+/* Navbar - Estilo Moderno y Profesional */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1.25rem 0;
+  transition: all var(--transition-normal);
+  background: transparent;
+}
+
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0.875rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.03);
+}
+
+.brand-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(255, 212, 59, 0.3));
+  transition: filter var(--transition-normal);
+}
+
+.navbar-scrolled .brand-logo {
+  height: 50px;
+  filter: drop-shadow(0 2px 4px rgba(0, 79, 140, 0.2));
+}
+
+.brand-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(255, 212, 59, 0.4));
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-white);
+  transition: color var(--transition-normal);
+}
+
+.navbar-scrolled .brand-name {
+  color: var(--negro-tecnico);
+}
+
+/* Menú de navegación */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-menu li button {
+  font-family: var(--font-body);
+  background: none;
+  border: none;
+  color: var(--text-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.navbar-menu li button::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('../../assets/rayito.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.navbar-scrolled .navbar-menu li button {
+  color: var(--text-secondary);
+}
+
+.navbar-menu li button::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--amarillo-energia);
+  transition: width var(--transition-normal);
+  border-radius: 2px;
+}
+
+.navbar-menu li button:not(.btn-contact):hover {
+  color: var(--celeste-base);
+  background: rgba(9, 44, 63, 0.747);
+}
+
+.navbar-menu li button:not(.btn-contact):hover::before {
+  opacity: 1;
+}
+
+.navbar-scrolled .navbar-menu li button:not(.btn-contact):hover {
+  color: var(--azul-profundo);
+}
+
+.navbar-menu li button:not(.btn-contact):hover::after {
+  width: 70%;
+}
+
+/* Botón de contacto destacado */
+.navbar-menu .btn-contact {
+  background: var(--gradient-accent);
+  color: var(--negro-tecnico);
+  padding: 0.5rem 1.2rem;
+  margin-left: 0.5rem;
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--shadow-button);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.navbar-menu .btn-contact::before {
+  display: none;
+}
+
+.navbar-menu .btn-contact::after {
+  display: none;
+}
+
+.navbar-menu li .btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 212, 59, 0.5);
+}
+
+/* Botón de menú móvil */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--text-white);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.navbar-scrolled .mobile-menu-toggle span {
+  background: var(--negro-tecnico);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar-container {
+    padding: 0 1.5rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 280px;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 2rem 1.5rem;
+    gap: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-out;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  .navbar-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+    border-bottom: 1px solid var(--gris-acero);
+  }
+
+  .navbar-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-menu li button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0.75rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  .navbar-menu li button::after {
+    left: 0;
+    transform: none;
+  }
+
+  .navbar-menu li button:not(.btn-contact):hover {
+    background: rgba(98, 195, 248, 0.1);
+  }
+
+  .navbar-menu li button:not(.btn-contact):hover::after {
+    width: 100%;
+  }
+
+  .navbar-menu .btn-contact {
+    margin: 1rem 0 0 0;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+
+  .brand-icon {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .brand-icon {
+    font-size: 1.5rem;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-menu {
+    width: 100%;
+  }
+}
+
+
