@@ -3,8 +3,7 @@ import './WhatsAppButton.css';
 const WhatsAppButton = () => {
 
   const handleWhatsAppClick = () => {
-    // Reemplaza con el número real de WhatsApp (sin espacios ni guiones)
-    const phoneNumber = '+5491163521258'; // Formato: código de país + número
+    const phoneNumber = '5491163521258';
     const message = encodeURIComponent('Hola! Me gustaría solicitar información sobre los servicios de ElectroPower.');
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, '_blank');
