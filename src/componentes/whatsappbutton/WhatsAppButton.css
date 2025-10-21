@@ -13,18 +13,18 @@
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
   z-index: 1000;
-  transition: all var(--transition-normal);
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .whatsapp-button:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
 }
 
 .whatsapp-button:hover .whatsapp-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-10px);
 }
 
 .whatsapp-icon {
@@ -36,19 +36,18 @@
 .whatsapp-tooltip {
   position: absolute;
   right: 85px;
-  background: var(--negro-tecnico);
+  background: #333;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
-  font-family: var(--font-body);
-  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9rem;
   font-weight: 600;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-normal);
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--celeste-base);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .whatsapp-tooltip::after {
@@ -61,33 +60,26 @@
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid var(--celeste-base);
+  border-left: 10px solid #333;
 }
 
-/* Soft pulse animation */
-@keyframes softPulse {
-  0%, 100% {
+/* Simple pulse animation */
+@keyframes pulse {
+  0% {
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 1;
   }
   50% {
-    transform: scale(1.15);
-    opacity: 0;
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-.whatsapp-button::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border: 2px solid #25d366;
-  border-radius: 50%;
-  opacity: 0;
-  animation: softPulse 3s ease-out infinite;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {

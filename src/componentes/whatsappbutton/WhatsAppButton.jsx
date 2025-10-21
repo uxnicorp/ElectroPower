@@ -1,33 +1,10 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
-  const buttonRef = useRef(null);
-
-  useEffect(() => {
-    // Animación de entrada del botón
-    gsap.from(buttonRef.current, {
-      scale: 0,
-      opacity: 0,
-      duration: 0.5,
-      delay: 1,
-      ease: 'back.out(1.7)'
-    });
-
-    // Animación de pulso continuo
-    gsap.to(buttonRef.current, {
-      scale: 1.1,
-      duration: 0.8,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut'
-    });
-  }, []);
 
   const handleWhatsAppClick = () => {
     // Reemplaza con el número real de WhatsApp (sin espacios ni guiones)
-    const phoneNumber = '5491155550000'; // Formato: código de país + número
+    const phoneNumber = '+5491163521258'; // Formato: código de país + número
     const message = encodeURIComponent('Hola! Me gustaría solicitar información sobre los servicios de ElectroPower.');
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, '_blank');
@@ -36,7 +13,6 @@ const WhatsAppButton = () => {
   return (
     <button 
       className="whatsapp-button" 
-      ref={buttonRef}
       onClick={handleWhatsAppClick}
       aria-label="Contactar por WhatsApp"
     >
