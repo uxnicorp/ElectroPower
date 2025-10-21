@@ -129,7 +129,7 @@ const Services = () => {
           <div className="services-divider"></div>
           <p className="services-subtitle">
             En <strong>ElectroPower</strong> ofrecemos soluciones eléctricas completas para proyectos residenciales, 
-            comerciales e industriales. Con más de 15 años de experiencia, nuestro equipo de profesionales 
+            comerciales e industriales. Con más de 6 años de experiencia, nuestro equipo de profesionales 
             certificados garantiza calidad, seguridad y eficiencia en cada trabajo.
           </p>
           <p className="services-subtitle-secondary">

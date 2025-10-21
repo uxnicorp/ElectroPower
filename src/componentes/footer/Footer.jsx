@@ -27,7 +27,7 @@ const Footer = () => {
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
                 </svg>
-                <span>15+ Años</span>
+                <span>6+ Años</span>
               </div>
             </div>
           </div>

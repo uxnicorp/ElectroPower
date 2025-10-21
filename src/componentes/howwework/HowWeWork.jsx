@@ -157,7 +157,7 @@ const HowWeWork = () => {
               <div className="image-overlay">
                 <div className="overlay-content">
                   <h3 className="overlay-title">Profesionales Certificados</h3>
-                  <p className="overlay-text">Más de 15 años de experiencia garantizan resultados de calidad</p>
+                  <p className="overlay-text">Más de 6 años de experiencia garantizan resultados de calidad</p>
                 </div>
               </div>
             </div>
