@@ -305,4 +305,14 @@
   }
 }
 
+@media (max-width: 992px) {
+  .navbar-menu li button {
+    padding-left: 36px;       
+    background-position: 12px center !important;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    line-height: 1.3;
+  }
+}
+
 
