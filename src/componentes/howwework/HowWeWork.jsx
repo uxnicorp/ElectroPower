@@ -74,31 +74,34 @@ const HowWeWork = () => {
   ];
 
   return (
-    <section className="how-we-work" id="how-we-work">
+    <section id="howwework" className="howwework">
       <div className="how-we-work-container">
         <div className="section-header">
           <span className="section-badge">Nuestro Proceso</span>
           <h2 className="how-we-work-title">¿Cómo trabajamos?</h2>
           <div className="how-we-work-divider"></div>
           <p className="how-we-work-subtitle">
-            Nuestro enfoque combina planificación, ejecución precisa y control de calidad en cada etapa.
+            Nuestro enfoque combina planificación, ejecución precisa y control
+            de calidad en cada etapa.
           </p>
         </div>
 
         <div className="content-wrapper">
           <div className="steps-grid">
             {steps.map((step, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="step-item-wrapper"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className={`step-card ${openStep === index ? 'active' : ''}`}>
-                  <div 
-                    className="step-header" 
+                <div
+                  className={`step-card ${openStep === index ? "active" : ""}`}
+                >
+                  <div
+                    className="step-header"
                     onClick={() => toggleStep(index)}
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
+                      if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
                         toggleStep(index);
                       }
@@ -117,33 +120,49 @@ const HowWeWork = () => {
                     <div className="step-header-right">
                       <div className="step-badge">{step.badge}</div>
                       <div className="accordion-icon">
-                        <svg 
-                          width="24" 
-                          height="24" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
                           xmlns="http://www.w3.org/2000/svg"
-                          className={openStep === index ? 'rotated' : ''}
+                          className={openStep === index ? "rotated" : ""}
                         >
-                          <path 
-                            d="M6 9L12 15L18 9" 
-                            stroke="currentColor" 
-                            strokeWidth="2" 
-                            strokeLinecap="round" 
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
                             strokeLinejoin="round"
                           />
                         </svg>
                       </div>
                     </div>
                   </div>
-                  <div className={`step-content ${openStep === index ? 'open' : ''}`}>
+                  <div
+                    className={`step-content ${
+                      openStep === index ? "open" : ""
+                    }`}
+                  >
                     <p className="step-description">{step.description}</p>
                   </div>
                 </div>
                 {index < steps.length - 1 && (
                   <div className="step-arrow">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 5L12 19M12 19L19 12M12 19L5 12"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                 )}
@@ -153,38 +172,77 @@ const HowWeWork = () => {
 
           <div className="image-section">
             <div className="image-container">
-              <img src={electricistaWork} alt="Electricista profesional trabajando" className="work-image" />
+              <img
+                src={electricistaWork}
+                alt="Electricista profesional trabajando"
+                className="work-image"
+              />
               <div className="image-overlay">
                 <div className="overlay-content">
                   <h3 className="overlay-title">Profesionales Certificados</h3>
-                  <p className="overlay-text">Más de 6 años de experiencia garantizan resultados de calidad</p>
+                  <p className="overlay-text">
+                    Más de 6 años de experiencia garantizan resultados de
+                    calidad
+                  </p>
                 </div>
               </div>
             </div>
             <div className="quality-badges">
               <div className="quality-item">
                 <div className="quality-icon">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
                 <span className="quality-text">Profesionales Certificados</span>
               </div>
               <div className="quality-item">
                 <div className="quality-icon">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
                 <span className="quality-text">Seguridad Garantizada</span>
               </div>
               <div className="quality-item">
                 <div className="quality-icon">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
-                <span className="quality-text">Equipos de Última Generación</span>
+                <span className="quality-text">
+                  Equipos de Última Generación
+                </span>
               </div>
             </div>
           </div>
