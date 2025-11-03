@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 
@@ -7,7 +7,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -19,38 +18,21 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setIsMobileMenuOpen(false);
-  };
-
   const goHome = () => {
     if (location.pathname !== "/") {
-      navigate("/", { replace: true });
+      window.location.href = "/";
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
   const goToAbout = () => {
-    if (location.pathname !== "/") {      
-      navigate("/", { state: { sectionId: "about" } });
-    } else {      
-      document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.href = "/nosotros";
     setIsMobileMenuOpen(false);
   };
   const goToHowWeWork = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { sectionId: "howwework" } });
+      window.location.href = "/#howwework";
     } else {
       document
         .getElementById("howwework")
@@ -60,7 +42,7 @@ const Navbar = () => {
   };
   const goToWhyChoose = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { sectionId: "whychoose" } });
+      window.location.href = "/#whychoose";
     } else {
       document
         .getElementById("whychoose")
@@ -70,7 +52,7 @@ const Navbar = () => {
   };
   const goToProjects = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { sectionId: "projects" } });
+      window.location.href = "/#projects";
     } else {
       document
         .getElementById("projects")
@@ -80,7 +62,7 @@ const Navbar = () => {
   };
   const goToLocation = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { sectionId: "location" } });
+      window.location.href = "/#location";
     } else {
       document
         .getElementById("location")
@@ -90,7 +72,7 @@ const Navbar = () => {
   };
   const goToContact = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { sectionId: "contact" } });
+      window.location.href = "/#contact";
     } else {
       document
         .getElementById("contact")
@@ -150,8 +132,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <button onClick={goToContact} Contacto className="btn-contact">
-              {" "}
+            <button onClick={goToContact} className="btn-contact">
               Contacto
             </button>
           </li>
