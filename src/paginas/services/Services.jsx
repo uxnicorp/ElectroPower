@@ -216,7 +216,8 @@ const Services = () => {
           <div className="services-divider"></div>
           <p className="services-subtitle">
             En <strong>ElectroPower</strong> ofrecemos soluciones eléctricas
-            completas para proyectos <strong>residenciales, comerciales e industriales.</strong>
+            completas para proyectos{" "}
+            <strong>residenciales, comerciales e industriales.</strong>
             Con más de 6 años de experiencia, nuestro equipo de profesionales
             certificados garantiza calidad, seguridad y eficiencia en cada
             trabajo.
@@ -249,6 +250,41 @@ const Services = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="services-footer-dos">
+          <div className="services-cta-dos urgency-banner">
+            <h3 className="cta-title-dos">
+              ATENDEMOS URGENCIAS ELÉCTRICAS LAS 24 HORAS
+            </h3>
+          </div>
+        </div>
+
+        <div className="services-container">
+          <div className="services-header">
+            <p className="services-subtitle">
+              <strong>
+                Los trabajos que realizamos incluyen de ser necesario:
+              </strong>
+              <u className="listado-servicios">
+                <li> Asesoramiento en cualquier Proyecto de Construcción</li>
+                <li>Elaboración de Presupuestos</li>
+                <li>
+                  Construcción y Remodelación de Obras Civiles, Comerciales e
+                  Industriales
+                </li>
+                <li>
+                  Abarcamos todo lo que dicho Proceso pueda incluir.
+                  (Albañilería, Plomería, Gasista).
+                </li>
+                <li>Construcciones en Seco (Durlock)</li>
+                <li>
+                  Realización de sistema de Aire Acondicionado Centralizado
+                  (Sistema con conductos Climaver)
+                </li>
+              </u>
+            </p>
+          </div>
         </div>
 
         <div className="services-footer">
