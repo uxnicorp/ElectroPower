@@ -60,6 +60,25 @@ const AboutUs = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const consultarWhatsApp = (serviceTitle) => {
+    const phone = "5491163521258";
+    const msg = encodeURIComponent(
+      `Hola! Quisiera saber más información sobre ${serviceTitle}.`
+    );
+    const url = `https://wa.me/${phone}?text=${msg}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const consultarEmail = (serviceTitle) => {
+    const email = "contacto@electropower.com.ar";
+    const subject = encodeURIComponent(`Consulta sobre ${serviceTitle}`);
+    const body = encodeURIComponent(
+      `Hola! Quisiera saber más información sobre ${serviceTitle}.\n\nQuedo atento a su respuesta.\n\nSaludos.`
+    );
+    const url = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href = url;
+  };
+
   return (
     <section className="aboutus" id="aboutus">
       <div className="aboutus-container">
@@ -145,6 +164,20 @@ const AboutUs = () => {
                 <li>Transformadores de rebaje</li>
                 <li>Líneas subterráneas</li>
               </ul>
+              <div className="service-card-actions">
+                <button
+                  className="btn-service-whatsapp"
+                  onClick={() => consultarWhatsApp("Media Tensión")}
+                >
+                  💬 Consultar por WhatsApp
+                </button>
+                <button
+                  className="btn-service-email"
+                  onClick={() => consultarEmail("Media Tensión")}
+                >
+                  ✉️ Consultar por Mail
+                </button>
+              </div>
             </div>
 
             <div className="service-highlight-card">
@@ -160,6 +193,20 @@ const AboutUs = () => {
                 <li>Pilares para medidores</li>
                 <li>Tableros eléctricos</li>
               </ul>
+              <div className="service-card-actions">
+                <button
+                  className="btn-service-whatsapp"
+                  onClick={() => consultarWhatsApp("Iluminación & Instalaciones")}
+                >
+                  💬 Consultar por WhatsApp
+                </button>
+                <button
+                  className="btn-service-email"
+                  onClick={() => consultarEmail("Iluminación & Instalaciones")}
+                >
+                  ✉️ Consultar por Mail
+                </button>
+              </div>
             </div>
 
             <div className="service-highlight-card">
@@ -174,6 +221,20 @@ const AboutUs = () => {
                 <li>Certificaciones DCI</li>
                 <li>Urgencias 24 hs</li>
               </ul>
+              <div className="service-card-actions">
+                <button
+                  className="btn-service-whatsapp"
+                  onClick={() => consultarWhatsApp("Certificaciones & Seguridad")}
+                >
+                  💬 Consultar por WhatsApp
+                </button>
+                <button
+                  className="btn-service-email"
+                  onClick={() => consultarEmail("Certificaciones & Seguridad")}
+                >
+                  ✉️ Consultar por Mail
+                </button>
+              </div>
             </div>
 
             <div className="service-highlight-card">
@@ -188,6 +249,20 @@ const AboutUs = () => {
                 <li>Obras civiles y comerciales</li>
                 <li>Plomería, gas y albañilería</li>
               </ul>
+              <div className="service-card-actions">
+                <button
+                  className="btn-service-whatsapp"
+                  onClick={() => consultarWhatsApp("Climatización & Construcción")}
+                >
+                  💬 Consultar por WhatsApp
+                </button>
+                <button
+                  className="btn-service-email"
+                  onClick={() => consultarEmail("Climatización & Construcción")}
+                >
+                  ✉️ Consultar por Mail
+                </button>
+              </div>
             </div>
           </div>
         </div>

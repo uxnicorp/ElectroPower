@@ -30,6 +30,12 @@ const Navbar = () => {
     window.location.href = "/nosotros";
     setIsMobileMenuOpen(false);
   };
+  
+  const goToServices = () => {
+    window.location.href = "/servicios";
+    setIsMobileMenuOpen(false);
+  };
+  
   const goToHowWeWork = () => {
     if (location.pathname !== "/") {
       window.location.href = "/#howwework";
@@ -105,12 +111,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <button
-              onClick={() => {
-                window.location.href = "/servicios";
-                setIsMobileMenuOpen(false);
-              }}
-            >
+            <button onClick={goToServices}>
               Servicios
             </button>
           </li>

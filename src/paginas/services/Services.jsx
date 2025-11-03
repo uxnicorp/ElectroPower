@@ -207,6 +207,25 @@ const Services = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const consultarWhatsApp = (serviceTitle, serviceDescription) => {
+    const phone = "5491163521258";
+    const msg = encodeURIComponent(
+      `Hola! Quisiera saber más información sobre ${serviceTitle}. ${serviceDescription}`
+    );
+    const url = `https://wa.me/${phone}?text=${msg}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const consultarEmail = (serviceTitle, serviceDescription) => {
+    const email = "contacto@electropower.com.ar";
+    const subject = encodeURIComponent(`Consulta sobre ${serviceTitle}`);
+    const body = encodeURIComponent(
+      `Hola! Quisiera saber más información sobre ${serviceTitle}.\n\n${serviceDescription}\n\nQuedo atento a su respuesta.\n\nSaludos.`
+    );
+    const url = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href = url;
+  };
+
   return (
     <section className="services" id="services">
       <div className="services-container">
@@ -248,6 +267,24 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <div className="service-card-actions">
+                <button
+                  className="btn-service-whatsapp"
+                  onClick={() =>
+                    consultarWhatsApp(service.title, service.description)
+                  }
+                >
+                  💬 Consultar por WhatsApp
+                </button>
+                <button
+                  className="btn-service-email"
+                  onClick={() =>
+                    consultarEmail(service.title, service.description)
+                  }
+                >
+                  ✉️ Consultar por Mail
+                </button>
+              </div>
             </div>
           ))}
         </div>

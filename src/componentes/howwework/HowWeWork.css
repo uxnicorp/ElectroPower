@@ -601,59 +601,6 @@
   color: var(--negro-tecnico);
 }
 
-.listado-servicios {
-  list-style: none;
-  text-decoration: none;
-}
-
-.services-footer-trabajamos {
-  padding-top: 50px;
-}
-
-.services-cta-dos {
-  text-align: center;
-  padding: 4rem 3rem;  
-  background: linear-gradient(135deg, #ffe680 0%, #ffcb22 60%, #f5b000 100%);
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 40px rgba(255, 203, 34, 0.35);
-  position: relative;
-  overflow: hidden;
-}
-
-.services-cta-dos::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.services-cta-dos::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -5%;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.cta-title-dos {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 800;
-  color: white;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 1px 2px rgba(0,0,0,.25);
-}
-
-
 /* Responsive */
 @media (max-width: 1024px) {
   .content-wrapper {
