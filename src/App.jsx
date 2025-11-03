@@ -1,7 +1,6 @@
 import './App.css'
 import Navbar from './componentes/navbar/Navbar'
 import Hero from './componentes/hero/Hero'
-import About from './componentes/about/About'
 import HowWeWork from './componentes/howwework/HowWeWork'
 import WhyChoose from './componentes/whychoose/WhyChoose'
 import Projects from './componentes/projects/Projects'
@@ -19,13 +18,20 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (location.state?.sectionId) {
-      const targetId = location.state.sectionId; // ej: 'about'
+    // Manejo de hash en la URL (ej: /#contact)
+    if (location.hash) {
+      const targetId = location.hash.substring(1); // quitar el #
       const el = document.getElementById(targetId);
       if (el) {
-        // esperar al render para scrollear suave
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      }
+    }
+    // Manejo de state (para compatibilidad)
+    else if (location.state?.sectionId) {
+      const targetId = location.state.sectionId;
+      const el = document.getElementById(targetId);
+      if (el) {
         setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 0);
-        // limpiar el state para que F5 no repita el scroll
         navigate(location.pathname, { replace: true, state: {} });
       }
     }
@@ -38,8 +44,7 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <Hero />
-      <About />      
+      <Hero />     
       <HowWeWork />
       <WhyChoose />
       <Projects />
