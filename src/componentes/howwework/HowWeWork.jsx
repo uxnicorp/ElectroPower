@@ -247,6 +247,14 @@ const HowWeWork = () => {
             </div>
           </div>
         </div>
+
+        <div className="services-footer-trabajamos">
+          <div className="services-cta-dos urgency-banner">
+            <h3 className="cta-title-dos">
+              ATENDEMOS URGENCIAS ELÉCTRICAS LAS 24 HORAS
+            </h3>
+          </div>
+        </div>
       </div>
     </section>
   );

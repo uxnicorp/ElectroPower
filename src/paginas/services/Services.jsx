@@ -288,19 +288,19 @@ const Services = () => {
         </div>
 
         <div className="services-footer">
-          <div className="services-cta">
-            <h3 className="cta-title">
+          <div className="services-cta-tres">
+            <h3 className="cta-title-tres">
               ¿Listo para comenzar tu proyecto con nosotros?
             </h3>
-            <p className="cta-description">
+            <p className="cta-description-tres">
               Contactanos hoy y obtené asesoramiento profesional sin cargo. Te
               ayudamos a encontrar la mejor solución para tus necesidades.
             </p>
-            <div className="cta-buttons">
-              <button className="btn-cta-primary" onClick={goToContact}>
+            <div className="cta-buttons-tres">
+              <button className="btn-cta-primary-tres" onClick={goToContact}>
                 📞 Solicitar Cotización
               </button>
-              <button className="btn-cta-secondary" onClick={openWhatsApp}>
+              <button className="btn-cta-secondary-tres" onClick={openWhatsApp}>
                 💬 Consultar por WhatsApp
               </button>
             </div>
