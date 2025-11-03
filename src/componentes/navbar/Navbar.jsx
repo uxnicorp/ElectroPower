@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -20,25 +21,25 @@ const Navbar = () => {
 
   const goHome = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/";
+      navigate("/");
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
   const goToAbout = () => {
-    window.location.href = "/nosotros";
+    navigate("/nosotros");
     setIsMobileMenuOpen(false);
   };
   
   const goToServices = () => {
-    window.location.href = "/servicios";
+    navigate("/servicios");
     setIsMobileMenuOpen(false);
   };
   
   const goToHowWeWork = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/#howwework";
+      navigate("/#howwework");
     } else {
       document
         .getElementById("howwework")
@@ -48,7 +49,7 @@ const Navbar = () => {
   };
   const goToWhyChoose = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/#whychoose";
+      navigate("/#whychoose");
     } else {
       document
         .getElementById("whychoose")
@@ -58,7 +59,7 @@ const Navbar = () => {
   };
   const goToProjects = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/#projects";
+      navigate("/#projects");
     } else {
       document
         .getElementById("projects")
@@ -68,7 +69,7 @@ const Navbar = () => {
   };
   const goToLocation = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/#location";
+      navigate("/#location");
     } else {
       document
         .getElementById("location")
@@ -78,7 +79,7 @@ const Navbar = () => {
   };
   const goToContact = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/#contact";
+      navigate("/#contact");
     } else {
       document
         .getElementById("contact")
