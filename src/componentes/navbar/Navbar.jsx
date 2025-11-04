@@ -28,12 +28,20 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
   const goToAbout = () => {
-    navigate("/nosotros");
+    if (location.pathname === "/nosotros") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/nosotros");
+    }
     setIsMobileMenuOpen(false);
   };
   
   const goToServices = () => {
-    navigate("/servicios");
+    if (location.pathname === "/servicios") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/servicios");
+    }
     setIsMobileMenuOpen(false);
   };
   
