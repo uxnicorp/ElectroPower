@@ -67,6 +67,16 @@ const Navbar = () => {
     }
     setIsMobileMenuOpen(false);
   };
+  const goToGallery = () => {
+    if (location.pathname !== "/") {
+      navigate("/#gallery");
+    } else {
+      document
+        .getElementById("gallery")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
   const goToLocation = () => {
     if (location.pathname !== "/") {
       navigate("/#location");
@@ -127,6 +137,10 @@ const Navbar = () => {
 
           <li>
             <button onClick={goToProjects}>Proyectos</button>
+          </li>
+
+          <li>
+            <button onClick={goToGallery}>Galería</button>
           </li>
 
           <li>
