@@ -1,5 +1,5 @@
-// src/App.jsx
-import "./App.css";
+
+import './App.css'
 import { useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Home from "./paginas/home/Home";
@@ -31,6 +31,7 @@ function App() {
 
   return (
     <div className="app">
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicios" element={<Services />} />
@@ -38,6 +39,7 @@ function App() {
         <Route path="/404" element={<Pagina404 />} />
         <Route path="*" element={<Pagina404 />} />
       </Routes>
+
     </div>
   );
 }

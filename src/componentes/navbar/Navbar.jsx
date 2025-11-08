@@ -28,12 +28,20 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
   const goToAbout = () => {
-    navigate("/nosotros");
+    if (location.pathname === "/nosotros") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/nosotros");
+    }
     setIsMobileMenuOpen(false);
   };
   
   const goToServices = () => {
-    navigate("/servicios");
+    if (location.pathname === "/servicios") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/servicios");
+    }
     setIsMobileMenuOpen(false);
   };
   
@@ -63,6 +71,16 @@ const Navbar = () => {
     } else {
       document
         .getElementById("projects")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
+  const goToGallery = () => {
+    if (location.pathname !== "/") {
+      navigate("/#gallery");
+    } else {
+      document
+        .getElementById("gallery")
         ?.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
@@ -127,6 +145,10 @@ const Navbar = () => {
 
           <li>
             <button onClick={goToProjects}>Proyectos</button>
+          </li>
+
+          <li>
+            <button onClick={goToGallery}>Galería</button>
           </li>
 
           <li>
