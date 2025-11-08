@@ -1,5 +1,7 @@
 import './Footer.css';
 import logo from '../../assets/logo.png';
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -294,11 +296,12 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>© {currentYear} ElectroPower. Todos los derechos reservados.</p>
-          <div className="footer-legal">
-            <a href="#privacy">Política de privacidad</a>
+          <p>Desarrollado por @uxnicorp</p>
+          <nav className="footer-legal">
+            <Link to="/404">Política de privacidad</Link>
             <span>|</span>
-            <a href="#terms">Términos de servicio</a>
-          </div>
+            <Link to="/404">Términos de servicio</Link>
+          </nav>
         </div>
       </div>
     </footer>
