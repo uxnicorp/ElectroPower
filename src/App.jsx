@@ -1,33 +1,25 @@
-import './App.css'
-import Navbar from './componentes/navbar/Navbar'
-import Hero from './componentes/hero/Hero'
-import HowWeWork from './componentes/howwework/HowWeWork'
-import WhyChoose from './componentes/whychoose/WhyChoose'
-import Projects from './componentes/projects/Projects'
-import Location from './componentes/location/Location'
-import Contact from './componentes/contact/Contact'
-import Footer from './componentes/footer/Footer'
-import WhatsAppButton from './componentes/whatsappbutton/WhatsAppButton'
+// src/App.jsx
+import "./App.css";
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import Home from "./paginas/home/Home";
+import Services from "./paginas/services/Services";
+import AboutUs from "./paginas/aboutus/AboutUs";
+import Pagina404 from "./paginas/pagina404/Pagina404";
 
 function App() {
-
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Manejo de hash en la URL (ej: /#contact)
+    // Scroll suave solo en la Home
+    if (location.pathname !== "/") return;
+
     if (location.hash) {
-      const targetId = location.hash.substring(1); // quitar el #
+      const targetId = location.hash.slice(1);
       const el = document.getElementById(targetId);
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
-      }
-    }
-    // Manejo de state (para compatibilidad)
-    else if (location.state?.sectionId) {
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+    } else if (location.state?.sectionId) {
       const targetId = location.state.sectionId;
       const el = document.getElementById(targetId);
       if (el) {
@@ -37,23 +29,17 @@ function App() {
     }
   }, [location, navigate]);
 
-
-
-
-
   return (
     <div className="app">
-      <Navbar />
-      <Hero />     
-      <HowWeWork />
-      <WhyChoose />
-      <Projects />
-      <Location />
-      <Contact />
-      <Footer />
-      <WhatsAppButton />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/servicios" element={<Services />} />
+        <Route path="/nosotros" element={<AboutUs />} />
+        <Route path="/404" element={<Pagina404 />} />
+        <Route path="*" element={<Pagina404 />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
