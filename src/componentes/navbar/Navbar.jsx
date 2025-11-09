@@ -74,6 +74,16 @@ const Navbar = () => {
     closeMenu();
   };
 
+  // NUEVO: ir a Noticias (ruta propia)
+  const goToNews = () => {
+    if (location.pathname === "/noticias") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/noticias");
+    }
+    closeMenu();
+  };
+
   const goToLocation = () => {
     if (location.pathname !== "/") {
       navigate("/#location");
@@ -127,27 +137,27 @@ const Navbar = () => {
           <li>
             <button onClick={goToAbout}>Nosotros</button>
           </li>
-          
           <li>
             <button onClick={goToServices}>Servicios</button>
           </li>
-
           <li>
             <button onClick={goToHowWeWork}>¿Cómo Trabajamos?</button>
           </li>
-
           <li>
             <button onClick={goToWhyChoose}>¿Por Qué Elegirnos?</button>
           </li>
-
           <li>
             <button onClick={goToGallery}>Galería</button>
           </li>
-          
+
+          {/* NUEVO: ubicado junto a Galería */}
+          <li>
+            <button onClick={goToNews}>Noticias</button>
+          </li>
+
           <li>
             <button onClick={goToLocation}>Ubicación</button>
           </li>
-
           <li>
             <button onClick={goToContact} className="btn-contact">
               Contacto
