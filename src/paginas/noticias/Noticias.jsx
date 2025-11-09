@@ -1,4 +1,4 @@
-// src/paginas/noticias/Noticias.jsx
+
 import "./Noticias.css";
 import Navbar from "../../componentes/navbar/Navbar.jsx";
 import Footer from "../../componentes/footer/Footer.jsx";
@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 const Noticias = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Aplica estilos del navbar solo en esta página
+  
   useEffect(() => {
     document.body.classList.add("page-noticias");
     return () => document.body.classList.remove("page-noticias");
@@ -20,7 +20,7 @@ const Noticias = () => {
     return () => window.removeEventListener("keydown", onEsc);
   }, []);
 
-  // Imágenes desde /public para evitar errores de import en Vite
+  
   const galanImages = [
     {
       id: 1,
@@ -85,7 +85,7 @@ const Noticias = () => {
             </p>
           </div>
 
-          {/* Texto principal */}
+
           <div className="noticias-content">
             <p className="fade-in-up delay-4">
               <strong>Electropower</strong> y <strong>Grupo Galán</strong> unen
@@ -144,7 +144,7 @@ const Noticias = () => {
                   className="logo-card"
                   aria-label="ElectroPower"
                   onClick={(e) => {
-                    // opcional: si querés que no recargue y solo navegue en SPA:
+                    
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
