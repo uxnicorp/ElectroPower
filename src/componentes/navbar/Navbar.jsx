@@ -74,7 +74,7 @@ const Navbar = () => {
     closeMenu();
   };
 
-  // NUEVO: ir a Noticias (ruta propia)
+ 
   const goToNews = () => {
     if (location.pathname === "/noticias") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -149,8 +149,7 @@ const Navbar = () => {
           <li>
             <button onClick={goToGallery}>Galería</button>
           </li>
-
-          {/* NUEVO: ubicado junto a Galería */}
+          
           <li>
             <button onClick={goToNews}>Noticias</button>
           </li>

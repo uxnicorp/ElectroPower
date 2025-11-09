@@ -285,7 +285,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>© {currentYear} ElectroPower. Todos los derechos reservados.</p>
-          <p>Desarrollado por @uxnicorp</p>
+          <p>Desarrollado por www.uxnicorp.com.ar</p>
           <nav className="footer-legal">
             <Link to="/terms#privacy">Política de privacidad</Link>
             <span>|</span>
