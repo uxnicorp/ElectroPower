@@ -7,6 +7,7 @@ import Projects from "../../componentes/projects/Projects";
 import Location from "../../componentes/location/Location";
 import Contact from "../../componentes/contact/Contact";
 import Footer from "../../componentes/footer/Footer";
+import Gallery from "../../componentes/gallery/Gallery";
 import WhatsAppButton from "../../componentes/whatsappbutton/WhatsAppButton";
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
       <Hero />
       <HowWeWork />
       <WhyChoose />
-      <Projects />
+      <Gallery />
       <Location />
       <Contact />
       <Footer />

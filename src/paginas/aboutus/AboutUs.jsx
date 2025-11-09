@@ -70,7 +70,7 @@ const AboutUs = () => {
   };
 
   const consultarEmail = (serviceTitle) => {
-    const email = "contacto@electropower.com.ar";
+    const email = "electropowerconstrucciones@gmail.com";
     const subject = encodeURIComponent(`Consulta sobre ${serviceTitle}`);
     const body = encodeURIComponent(
       `Hola! Quisiera saber más información sobre ${serviceTitle}.\n\nQuedo atento a su respuesta.\n\nSaludos.`

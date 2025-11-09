@@ -51,11 +51,72 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
-    console.log('Formulario enviado:', formData);
-    alert('¡Gracias por tu consulta! Te contactaremos en menos de 24 hs.');
+    
+    if (!formData.name || !formData.phone || !formData.email || !formData.message) {
+      alert('Por favor, completá todos los campos obligatorios.');
+      return;
+    }
+    
+    const whatsappNumber = "5491163521258";
+    let message = `Hola! Me comunico desde el sitio web de ElectroPower.\n\n`;
+    message += `📋 *Mis datos son:*\n`;
+    message += `• Nombre: ${formData.name}\n`;
+    
+    if (formData.company) {
+      message += `• Empresa: ${formData.company}\n`;
+    }
+    
+    message += `• Teléfono: ${formData.phone}\n`;
+    message += `• Email: ${formData.email}\n\n`;
+    message += `💬 *Mi consulta es:*\n${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+    setFormData({
+      name: '',
+      company: '',
+      phone: '',
+      email: '',
+      message: ''
+    });
+  };
+
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.phone || !formData.email || !formData.message) {
+      alert('Por favor, completá todos los campos obligatorios.');
+      return;
+    }
+
+    const emailTo = "electropowerconstrucciones@gmail.com";
+    const subject = `Consulta de ${formData.name}${formData.company ? ' - ' + formData.company : ''}`;
+    
+    let body = `Hola! Me comunico desde el sitio web de ElectroPower.\n\n`;
+    body += `MIS DATOS:\n`;
+    body += `Nombre: ${formData.name}\n`;
+    
+    if (formData.company) {
+      body += `Empresa: ${formData.company}\n`;
+    }
+    
+    body += `Teléfono: ${formData.phone}\n`;
+    body += `Email: ${formData.email}\n\n`;
+    body += `MI CONSULTA:\n${formData.message}\n\n`;
+    body += `Quedo a la espera de su respuesta.\n\nSaludos cordiales.`;
+    
+
+    const mailtoUrl = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+
+    window.location.href = mailtoUrl;
+    
+
     setFormData({
       name: '',
       company: '',
@@ -94,7 +155,7 @@ const Contact = () => {
 
         <div className="contact-content">
           <div className="contact-form-wrapper" ref={formRef}>
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">Nombre *</label>
                 <input
@@ -161,9 +222,22 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary">
-                ⚡ Solicitar cotización ahora
-              </button>
+              <div className="form-buttons">
+                <button 
+                  type="button" 
+                  className="btn btn-whatsapp"
+                  onClick={handleWhatsAppSubmit}
+                >
+                  💬 Enviar por WhatsApp
+                </button>
+                <button 
+                  type="button" 
+                  className="btn btn-email"
+                  onClick={handleEmailSubmit}
+                >
+                  ✉️ Enviar por Email
+                </button>
+              </div>
             </form>
           </div>
 
@@ -183,7 +257,7 @@ const Contact = () => {
                 </div>
                 <div className="info-details">
                   <h4>WhatsApp / Teléfono</h4>
-                  <p>+5491163521258</p>
+                  <p>+54 9 11 6352-1258</p>
                 </div>
               </div>
 
@@ -202,7 +276,7 @@ const Contact = () => {
                 </div>
                 <div className="info-details">
                   <h4>Email</h4>
-                  <p>contacto@electropower.com.ar</p>
+                  <p>electropowerconstrucciones@gmail.com</p>
                 </div>
               </div>
 

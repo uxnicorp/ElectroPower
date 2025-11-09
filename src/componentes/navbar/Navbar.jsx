@@ -65,16 +65,15 @@ const Navbar = () => {
     }
     setIsMobileMenuOpen(false);
   };
-  const goToProjects = () => {
-    if (location.pathname !== "/") {
-      navigate("/#projects");
+  const goToTerms = () => {
+    if (location.pathname === "/terminos") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      document
-        .getElementById("projects")
-        ?.scrollIntoView({ behavior: "smooth" });
+      navigate("/terminos");
     }
     setIsMobileMenuOpen(false);
   };
+  
   const goToGallery = () => {
     if (location.pathname !== "/") {
       navigate("/#gallery");
@@ -125,6 +124,11 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar-menu ${isMobileMenuOpen ? "active" : ""}`}>
+          <div className="mobile-menu-header">
+            <img src={logo} alt="ElectroPower Logo" className="mobile-menu-logo" />
+            <span className="mobile-menu-brand">ElectroPower</span>
+          </div>
+
           <li>
             <button onClick={goToAbout}>Nosotros</button>
           </li>
@@ -144,11 +148,11 @@ const Navbar = () => {
           </li>
 
           <li>
-            <button onClick={goToProjects}>Proyectos</button>
+            <button onClick={goToGallery}>Galería</button>
           </li>
 
           <li>
-            <button onClick={goToGallery}>Galería</button>
+            <button onClick={goToTerms}>Términos</button>
           </li>
 
           <li>
