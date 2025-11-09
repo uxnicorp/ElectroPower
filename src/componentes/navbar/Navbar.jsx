@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import './Navbar.css';
-import logo from '../../assets/logo.png';
+import "./Navbar.css";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,42 +9,38 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   const goHome = () => {
-    if (location.pathname !== "/") {
-      navigate("/");
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    setIsMobileMenuOpen(false);
+    if (location.pathname !== "/") navigate("/");
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+    closeMenu();
   };
+
   const goToAbout = () => {
     if (location.pathname === "/nosotros") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       navigate("/nosotros");
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
-  
+
   const goToServices = () => {
     if (location.pathname === "/servicios") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       navigate("/servicios");
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
-  
+
   const goToHowWeWork = () => {
     if (location.pathname !== "/") {
       navigate("/#howwework");
@@ -53,8 +49,9 @@ const Navbar = () => {
         .getElementById("howwework")
         ?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
+
   const goToWhyChoose = () => {
     if (location.pathname !== "/") {
       navigate("/#whychoose");
@@ -63,17 +60,9 @@ const Navbar = () => {
         .getElementById("whychoose")
         ?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
-  const goToTerms = () => {
-    if (location.pathname === "/terminos") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      navigate("/terminos");
-    }
-    setIsMobileMenuOpen(false);
-  };
-  
+
   const goToGallery = () => {
     if (location.pathname !== "/") {
       navigate("/#gallery");
@@ -82,8 +71,9 @@ const Navbar = () => {
         .getElementById("gallery")
         ?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
+
   const goToLocation = () => {
     if (location.pathname !== "/") {
       navigate("/#location");
@@ -92,8 +82,9 @@ const Navbar = () => {
         .getElementById("location")
         ?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
+
   const goToContact = () => {
     if (location.pathname !== "/") {
       navigate("/#contact");
@@ -102,7 +93,7 @@ const Navbar = () => {
         .getElementById("contact")
         ?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+    closeMenu();
   };
 
   return (
@@ -125,18 +116,20 @@ const Navbar = () => {
 
         <ul className={`navbar-menu ${isMobileMenuOpen ? "active" : ""}`}>
           <div className="mobile-menu-header">
-            <img src={logo} alt="ElectroPower Logo" className="mobile-menu-logo" />
+            <img
+              src={logo}
+              alt="ElectroPower Logo"
+              className="mobile-menu-logo"
+            />
             <span className="mobile-menu-brand">ElectroPower</span>
           </div>
 
           <li>
             <button onClick={goToAbout}>Nosotros</button>
           </li>
-
+          
           <li>
-            <button onClick={goToServices}>
-              Servicios
-            </button>
+            <button onClick={goToServices}>Servicios</button>
           </li>
 
           <li>
@@ -150,11 +143,7 @@ const Navbar = () => {
           <li>
             <button onClick={goToGallery}>Galería</button>
           </li>
-
-          <li>
-            <button onClick={goToTerms}>Términos</button>
-          </li>
-
+          
           <li>
             <button onClick={goToLocation}>Ubicación</button>
           </li>

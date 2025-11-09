@@ -1,4 +1,3 @@
-// src/paginas/pagina404/Pagina404.jsx
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Pagina404.css";

@@ -1,4 +1,4 @@
-/* Paleta base */
+
 :root {
   --nf-bg: #0b0c10;
   --nf-text: #f5f5f5;
@@ -21,7 +21,7 @@
   isolation: isolate;
 }
 
-/* Fondo con patrón diagonal muy sutil + viñeta */
+/* Fondo con patrón diagonal */
 .nf-bg {
   position: absolute;
   inset: 0;
@@ -79,7 +79,7 @@
     0 0 42px rgba(255,203,34,0.25);
 }
 
-/* Efecto “contorno” para que se vea sólido en fondos oscuros */
+/* Efecto “contorno” para que se vea en fondos oscuros */
 .nf-404 .nf-4,
 .nf-404 .nf-0 {
   position: relative;

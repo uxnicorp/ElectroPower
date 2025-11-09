@@ -1,7 +1,6 @@
-import './Footer.css';
-import logo from '../../assets/logo.png';
+import "./Footer.css";
+import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,7 +50,7 @@ const Footer = () => {
               <h4>Servicios</h4>
               <ul>
                 <li>
-                  <a href="#services">
+                  <Link to="/servicios#instalaciones">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -62,10 +61,10 @@ const Footer = () => {
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     Instalaciones eléctricas
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#services">
+                  <Link to="/servicios#refrigeracion">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -76,10 +75,10 @@ const Footer = () => {
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     Refrigeración
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#services">
+                  <Link to="/servicios#transformadores">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -90,10 +89,10 @@ const Footer = () => {
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     Transformadores
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#services">
+                  <Link to="/servicios#construccion">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -104,7 +103,7 @@ const Footer = () => {
                       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                     Construcción
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -113,7 +112,7 @@ const Footer = () => {
               <h4>Empresa</h4>
               <ul>
                 <li>
-                  <a href="#about">
+                  <Link to="/nosotros">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -126,10 +125,11 @@ const Footer = () => {
                       <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                     </svg>
                     Nosotros
-                  </a>
+                  </Link>
                 </li>
+
                 <li>
-                  <a href="#howwework">
+                  <Link to="/#howwework">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -139,10 +139,11 @@ const Footer = () => {
                       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                     </svg>
                     ¿Cómo Trabajamos?
-                  </a>
+                  </Link>
                 </li>
+
                 <li>
-                  <a href="#whychoose">
+                  <Link to="/#whychoose">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -153,24 +154,11 @@ const Footer = () => {
                       <path d="M9 12l2 2 4-4" />
                     </svg>
                     ¿Por Qué Elegirnos?
-                  </a>
+                  </Link>
                 </li>
+
                 <li>
-                  <a href="#projects">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
-                    </svg>
-                    Proyectos
-                  </a>
-                </li>
-                <li>
-                  <a href="#location">
+                  <Link to="/#location">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -181,10 +169,11 @@ const Footer = () => {
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                     Ubicación
-                  </a>
+                  </Link>
                 </li>
+
                 <li>
-                  <a href="#contact">
+                  <Link to="/#contact">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -194,7 +183,7 @@ const Footer = () => {
                       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                     </svg>
                     Contacto
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -223,7 +212,7 @@ const Footer = () => {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
-                  contacto@electropower.com.ar
+                  electropowerconstrucciones@gmail.com
                 </li>
                 <li>
                   <svg
@@ -298,9 +287,9 @@ const Footer = () => {
           <p>© {currentYear} ElectroPower. Todos los derechos reservados.</p>
           <p>Desarrollado por @uxnicorp</p>
           <nav className="footer-legal">
-            <Link to="/404">Política de privacidad</Link>
+            <Link to="/terms#privacy">Política de privacidad</Link>
             <span>|</span>
-            <Link to="/404">Términos de servicio</Link>
+            <Link to="/terms#terms">Términos de servicio</Link>
           </nav>
         </div>
       </div>
