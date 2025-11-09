@@ -1,0 +1,472 @@
+.noticias {
+  background-color: #f9fafb;
+  padding: 80px 0;
+}
+
+.noticias-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.noticias-header {
+  padding-top: 35px;
+}
+
+/* HEADER */
+/* ======= BADGE FUSIÓN ESTRATÉGICA ======= */
+.fusion-badge {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  background: linear-gradient(135deg, #62C3F8 0%, #3AAFED 100%);
+  color: white;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(98, 195, 248, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* efecto de brillo igual que el de servicios */
+.fusion-badge::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.fusion-badge:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* misma animación sutil que las secciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #1c1c1c;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #606060;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* ===== Divider amarillo debajo del título ===== */
+.news-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px auto 18px;
+}
+
+.nline {
+  width: 140px;                 /* podés ajustar */
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ffd43b 0%, #ffcb22 100%);
+  box-shadow: 0 6px 20px rgba(255, 203, 34, 0.28),
+              0 0 6px rgba(255, 203, 34, 0.55) inset;
+}
+
+.ndot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffcb22;
+  box-shadow: 0 0 16px rgba(255, 203, 34, 0.55),
+              0 0 4px rgba(255, 203, 34, 0.9) inset;
+  position: relative;
+}
+
+/* brillo suave alrededor de los puntos */
+.ndot::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 203, 34, .28), transparent 60%);
+  pointer-events: none;
+}
+
+/* (Opcional) pulso sutil como en Services */
+@keyframes ndotPulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%     { transform: scale(1.06); opacity: .9; }
+}
+.ndot-left  { animation: ndotPulse 2.2s ease-in-out infinite; }
+.ndot-right { animation: ndotPulse 2.2s ease-in-out .6s infinite; }
+
+
+/* TEXTO PRINCIPAL */
+.noticias-content {
+  text-align: left;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  padding: 40px 50px;
+  margin-bottom: 50px;
+}
+
+.noticias-content p {
+  color: #505050;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+.lista-bloque {
+  margin: 25px 0;
+}
+
+.lista-bloque h3 {
+  color: #0078d7;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.lista-bloque ul {
+  list-style: disc;
+  margin-left: 25px;
+  color: #404040;
+  line-height: 1.6;
+}
+
+/* Botón Galán */
+
+.noticias-link {
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+}
+
+.link-galan {
+  display: inline-flex;              /* mantiene el pill en una línea amplia */
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9rem 1.6rem;
+  border: 2px solid #0078d7;
+  border-radius: 999px;
+  color: #0078d7;
+  font-weight: 600;
+  text-decoration: none;             /* evita subrayado que se “cruza” */
+  line-height: 1;                    /* altura consistente */
+  max-width: 100%;
+  white-space: nowrap;               /* evita cortes raros en desktop */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: .25s ease;
+}
+
+.link-galan:hover {
+  background: #0078d7;
+  color: #fff;
+  box-shadow: 0 8px 26px rgba(0,120,215,.25);
+  transform: translateY(-1px);
+}
+
+.link-galan:active { transform: translateY(0); }
+
+/* GALERÍA */
+.noticias-galeria {
+  margin-top: 60px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.galeria-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  /* Caja consistente para todas las fotos sin recortar */
+  aspect-ratio: 4 / 3;                /* ajustá a 16/9 si te gusta más panorámico */
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                 /* 🔹 muestra la imagen completa */
+  background: #fff;                    /* fondo blanco alrededor cuando “sobran” bordes */
+  image-rendering: auto;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* En vez de zoom grande (que cortaría), un efecto suave */
+.galeria-item:hover img {
+  transform: scale(1.02);
+  filter: saturate(1.05);
+}
+
+/* Overlay informativo al pie */
+.galeria-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 120, 215, 0.9);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.galeria-overlay h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.galeria-overlay p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+}
+
+/* ===== MODAL A PANTALLA COMPLETA (sin overflow) ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: grid;
+  place-items: center;
+  padding: env(safe-area-inset-top, 0) 0 env(safe-area-inset-bottom, 0) 0;
+  z-index: 9999;
+}
+
+/* El contenedor ocupa casi todo el viewport */
+.modal-content {
+  position: relative;
+  width: 96vw;            /* ancho casi completo */
+  height: 96vh;           /* alto casi completo */
+  background: #111;       /* marco oscuro tipo “lightbox” */
+  border-radius: 14px;
+  overflow: hidden;       /* no scroll interno */
+  display: flex;          /* centramos la imagen */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  padding: 0;             /* sin padding para aprovechar al máximo */
+}
+
+/* La imagen se escala para caber COMPLETA */
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;    /* clave para no recortar */
+  background: #000;       /* si quedan bordes, que sean negros */
+  border-radius: 0;
+}
+
+/* Ocultamos/compactamos la leyenda para dar más área a la imagen */
+.modal-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #eee;
+  font-size: .9rem;
+  background: rgba(0,0,0,.35);
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Botón de cerrar, siempre visible dentro del marco */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffcb22;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+.modal-close:hover { background: #f5b000; }
+
+/* Ocultar cartel en el modal grande */
+.modal-caption {
+  display: none !important;
+}
+
+/* ==== NAVBAR ==== */
+.page-noticias .navbar,
+.page-noticias .navbar.navbar-scrolled {
+  background: var(--gradient-primary) !important; /* mismo azul de Servicios */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Texto/links en blanco */
+.page-noticias .navbar .brand-name,
+.page-noticias .navbar .navbar-menu button {
+  color: #ffffff !important;
+}
+
+/* Hover en amarillo marca */
+.page-noticias .navbar .navbar-menu button:hover {
+  color: #ffcb22 !important;
+}
+
+/* Botón de contacto en amarillo */
+.page-noticias .navbar .btn-contact {
+  background: #ffcb22 !important;
+  color: #1a1a1a !important;
+  border: none !important;
+}
+.page-noticias .navbar .btn-contact:hover {
+  background: #f5b000 !important;
+  color: #101010 !important;
+}
+
+/* Hamburguesa en blanco */
+.page-noticias .mobile-menu-toggle span {
+  background: #ffffff !important;
+}
+
+/* Fondo del menú móvil también azul */
+.page-noticias .navbar .navbar-menu.active {
+  background: var(--gradient-primary) !important;
+}
+.page-noticias .mobile-menu-header .mobile-menu-brand {
+  color: #ffffff !important;
+}
+
+/* ===== Utilidades de entrada suave (igual que el badge) ===== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp .75s ease-out forwards; /* usa el mismo keyframe que ya tenés */
+}
+
+/* Delays reutilizables */
+.delay-1 { animation-delay: .10s; }
+.delay-2 { animation-delay: .20s; }
+.delay-3 { animation-delay: .30s; }
+.delay-4 { animation-delay: .40s; }
+.delay-5 { animation-delay: .50s; }
+.delay-6 { animation-delay: .60s; }
+.delay-7 { animation-delay: .70s; }
+.delay-8 { animation-delay: .80s; }
+
+/* Opcional: reducir la distancia en items pequeños */
+.galeria-item.fade-in-up {
+  transform: translateY(20px);
+  animation-duration: .6s;
+}
+
+/* ==== Logos de partners ==== */
+.partners-logos {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin: 14px auto 0;
+  flex-wrap: wrap;
+}
+
+.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.logo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.10);
+}
+
+.logo-card img {
+  height: 56px;         /* tamaño visual coherente */
+  max-width: 200px;     /* evita desbordes horizontales */
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .link-galan {
+    padding: 1rem 1.4rem;
+    font-size: .95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .link-galan {
+    display: flex;                   /* ocupa toda la fila */
+    width: 100%;
+    white-space: normal;             /* permite salto limpio en mobile */
+    text-align: center;
+    line-height: 1.2;
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .noticias { padding: 64px 0; }
+  .noticias-content { padding: 28px 22px; }
+  .galeria-item img { height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .nline { width: 110px; }
+  .ndot { width: 12px; height: 12px; }
+}
+
+@media (max-width: 480px) {
+  .logo-card img {
+    height: 44px;
+    max-width: 160px;
+  }
+}
+
+
+
