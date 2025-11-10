@@ -155,12 +155,14 @@ const AboutUs = () => {
               className={`image-wrapper ${imageActive ? "active" : ""}`}
               onClick={handleImageClick}
             >
-              <img
-                key={currentImageIndex}
-                src={images[currentImageIndex]}
-                alt="Equipo ElectroPower en acción"
-                className="aboutus-image"
-              />
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt="Equipo ElectroPower en acción"
+                  className={`aboutus-image ${currentImageIndex === index ? 'active' : ''}`}
+                />
+              ))}
               <div className="image-overlay-color"></div>
               <div className="image-overlay-blur">
                 <img
