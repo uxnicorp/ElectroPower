@@ -190,7 +190,7 @@ const Services = () => {
 
   const goToContact = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { sectionId: "contact" } });
+      navigate("/#contact");
     } else {
       document
         .getElementById("contact")

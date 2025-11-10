@@ -17,27 +17,31 @@ function App() {
   
 
   useEffect(() => {
-    // Scroll al top cuando cambia la ruta (sin hash)
-    if (!location.hash) {
-      window.scrollTo(0, 0);
-    }
-
     // Manejo de hash en la URL 
     if (location.hash) {
-      const targetId = location.hash.substring(1); 
-      const el = document.getElementById(targetId);
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
-      }
+      const targetId = location.hash.substring(1);
+      // Primero ir al top instantáneamente
+      window.scrollTo(0, 0);
+      // Luego esperar a que la página cargue y hacer scroll suave a la sección
+      const scrollToSection = () => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+      // Aumentar el timeout para dar tiempo a que cargue todo
+      const timeoutId = setTimeout(scrollToSection, 500);
+      return () => clearTimeout(timeoutId);
     }
-    // Manejo de state (para compatibilidad)
+    // Manejo de state (para navegación desde otras páginas a sección específica)
     else if (location.state?.sectionId) {
       const targetId = location.state.sectionId;
-      const el = document.getElementById(targetId);
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 0);
-        navigate(location.pathname, { replace: true, state: {} });
-      }
+      // Redirigir con hash para que funcione correctamente
+      navigate(`${location.pathname}#${targetId}`, { replace: true });
+    }
+    // Scroll al top cuando cambia la ruta (sin hash ni state)
+    else {
+      window.scrollTo(0, 0);
     }
   }, [location, navigate]);
 
