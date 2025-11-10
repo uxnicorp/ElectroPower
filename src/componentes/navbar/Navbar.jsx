@@ -84,13 +84,11 @@ const Navbar = () => {
     }
     setIsMobileMenuOpen(false);
   };
-  const goToLocation = () => {
-    if (location.pathname !== "/") {
-      navigate("/#location");
+  const goToNoticias = () => {
+    if (location.pathname === "/noticias") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      document
-        .getElementById("location")
-        ?.scrollIntoView({ behavior: "smooth" });
+      navigate("/noticias");
     }
     setIsMobileMenuOpen(false);
   };
@@ -156,7 +154,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <button onClick={goToLocation}>Ubicación</button>
+            <button onClick={goToNoticias}>Noticias</button>
           </li>
 
           <li>
