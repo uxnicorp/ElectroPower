@@ -4,7 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../componentes/navbar/Navbar";
 import Footer from "../../componentes/footer/Footer";
 import WhatsAppButton from "../../componentes/whatsappbutton/WhatsAppButton";
-import imagenAbout from '../../assets/imagenabout.jpg';
+import imagenNosotros1 from '../../assets/ImagenNosotros(1).jpeg';
+import imagenNosotros2 from '../../assets/ImagenNosotros(2).jpeg';
 import logo from '../../assets/logo.png';
 import edenorBg from '../../assets/edenor.jpg';
 import edesurBg from '../../assets/edesur.jpg';
@@ -22,8 +23,19 @@ import logoTerranova from '../../assets/logoterranova.png';
 
 const AboutUs = () => {
   const [imageActive, setImageActive] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const images = [imagenNosotros2, imagenNosotros1];
+
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(imageInterval);
+  }, [images.length]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -144,8 +156,9 @@ const AboutUs = () => {
               onClick={handleImageClick}
             >
               <img
-                src={imagenAbout}
-                alt="ElectroPower Team"
+                key={currentImageIndex}
+                src={images[currentImageIndex]}
+                alt="Equipo ElectroPower en acción"
                 className="aboutus-image"
               />
               <div className="image-overlay-color"></div>

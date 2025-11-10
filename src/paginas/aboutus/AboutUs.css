@@ -297,7 +297,7 @@
 .image-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 550px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 
@@ -323,7 +323,17 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.8s ease-in-out, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInImage 0.8s ease-in-out;
+}
+
+@keyframes fadeInImage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .image-wrapper:hover .aboutus-image {

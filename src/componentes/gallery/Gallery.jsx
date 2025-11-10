@@ -165,6 +165,34 @@ const Gallery = () => {
       title: 'Obras Finalizadas',
       description: 'Proyectos completados con éxito',
       category: 'comercial'
+    },
+    {
+      id: 24,
+      src: new URL('../../assets/imagenGaleria(24).jpeg', import.meta.url).href,
+      title: 'Instalación de Transformador en Altura',
+      description: 'Montaje de transformador trifásico con grúa hidráulica',
+      category: 'industrial'
+    },
+    {
+      id: 25,
+      src: new URL('../../assets/imagenGaleria(25).jpeg', import.meta.url).href,
+      title: 'Instalación de Tablero Eléctrico Trifásico',
+      description: 'Montaje de transformador de distribución en campo',
+      category: 'instalación'
+    },
+    {
+      id: 26,
+      src: new URL('../../assets/imagenGaleria(26).jpeg', import.meta.url).href,
+      title: 'Excavación para Cableado Subterráneo',
+      description: 'Trabajo de zanjeo para tendido de cables de media tensión',
+      category: 'instalación'
+    },
+    {
+      id: 27,
+      src: new URL('../../assets/imagenGaleria(27).jpeg', import.meta.url).href,
+      title: 'Mantenimiento Nocturno en Media Tensión',
+      description: 'Trabajo en altura con hidroelevador en líneas de distribución',
+      category: 'mantenimiento'
     }
   ];
 

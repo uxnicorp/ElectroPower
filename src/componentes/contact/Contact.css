@@ -416,6 +416,9 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .cta-box {
@@ -496,13 +499,29 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin: 3rem auto 0;
+    padding: 0;
+  }
+
+  .contact-form-wrapper,
+  .contact-info {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .contact {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
+  }
+
+  .contact-container {
+    padding: 0 0.5rem;
   }
 
   .contact-badge {
@@ -570,8 +589,13 @@
 
   .info-item {
     flex-direction: row;
-    gap: 1rem;
-    align-items: center;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .info-details {
+    flex: 1;
+    min-width: 0;
   }
 
   .info-item:hover {

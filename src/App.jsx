@@ -17,6 +17,11 @@ function App() {
   
 
   useEffect(() => {
+    // Scroll al top cuando cambia la ruta (sin hash)
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+
     // Manejo de hash en la URL 
     if (location.hash) {
       const targetId = location.hash.substring(1); 
@@ -44,7 +49,7 @@ function App() {
         <Route path="/nosotros" element={<AboutUs />} />
         <Route path="/404" element={<Pagina404 />} />
         <Route path="*" element={<Pagina404 />} />
-        <Route path="/terms" element={<Terms />} />
+        <Route path="/terminos" element={<Terms />} />
         <Route path="/noticias" element={<Noticias />} />
       </Routes>
     </div>

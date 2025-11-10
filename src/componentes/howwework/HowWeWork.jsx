@@ -1,5 +1,5 @@
 import './HowWeWork.css';
-import electricistaWork from '../../assets/electricistawork.jpg';
+import electricistaWork from '../../assets/ImagenHowWork.jpeg';
 import { useState } from 'react';
 
 const HowWeWork = () => {
