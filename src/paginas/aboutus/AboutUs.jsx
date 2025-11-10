@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import "./AboutUs.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../componentes/navbar/Navbar";
 import Footer from "../../componentes/footer/Footer";
 import WhatsAppButton from "../../componentes/whatsappbutton/WhatsAppButton";
@@ -24,7 +24,6 @@ import logoTerranova from '../../assets/logoterranova.png';
 const AboutUs = () => {
   const [imageActive, setImageActive] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const location = useLocation();
   const navigate = useNavigate();
 
   const images = [imagenNosotros2, imagenNosotros1];
@@ -54,13 +53,7 @@ const AboutUs = () => {
   };
 
   const goToContact = () => {
-    if (location.pathname !== "/") {
-      navigate("/#contact");
-    } else {
-      document
-        .getElementById("contact")
-        ?.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate("/#contact");
   };
 
   const openWhatsApp = () => {

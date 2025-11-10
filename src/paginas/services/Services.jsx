@@ -1,6 +1,6 @@
 import "./Services.css";
 import rayito from "../../assets/rayito.png";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../componentes/navbar/Navbar";
 import Footer from "../../componentes/footer/Footer";
 import WhatsAppButton from "../../componentes/whatsappbutton/WhatsAppButton";
@@ -185,17 +185,10 @@ const Services = () => {
     },
   ];
 
-  const location = useLocation();
   const navigate = useNavigate();
 
   const goToContact = () => {
-    if (location.pathname !== "/") {
-      navigate("/#contact");
-    } else {
-      document
-        .getElementById("contact")
-        ?.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate("/#contact");
   };
 
   const openWhatsApp = () => {

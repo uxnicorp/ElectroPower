@@ -20,18 +20,30 @@ function App() {
     // Manejo de hash en la URL 
     if (location.hash) {
       const targetId = location.hash.substring(1);
-      // Primero ir al top instantáneamente
-      window.scrollTo(0, 0);
-      // Luego esperar a que la página cargue y hacer scroll suave a la sección
-      const scrollToSection = () => {
-        const el = document.getElementById(targetId);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      };
-      // Aumentar el timeout para dar tiempo a que cargue todo
-      const timeoutId = setTimeout(scrollToSection, 500);
-      return () => clearTimeout(timeoutId);
+      
+      // Si ya estamos en la página home (/) solo hacer scroll suave
+      if (location.pathname === "/") {
+        const scrollToSection = () => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        };
+        const timeoutId = setTimeout(scrollToSection, 100);
+        return () => clearTimeout(timeoutId);
+      } 
+      // Si venimos de otra página, ir al top y luego scroll suave
+      else {
+        window.scrollTo(0, 0);
+        const scrollToSection = () => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        };
+        const timeoutId = setTimeout(scrollToSection, 500);
+        return () => clearTimeout(timeoutId);
+      }
     }
     // Manejo de state (para navegación desde otras páginas a sección específica)
     else if (location.state?.sectionId) {
