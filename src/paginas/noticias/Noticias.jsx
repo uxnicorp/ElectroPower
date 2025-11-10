@@ -3,6 +3,7 @@ import "./Noticias.css";
 import Navbar from "../../componentes/navbar/Navbar.jsx";
 import Footer from "../../componentes/footer/Footer.jsx";
 import React, { useState, useEffect } from "react";
+import WhatsAppButton from "../../componentes/whatsappbutton/WhatsAppButton.jsx";
 
 const Noticias = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -68,7 +69,7 @@ const Noticias = () => {
             <div className="fusion-badge">FUSIÓN ESTRATÉGICA</div>
 
             <h1 className="title fade-in-up delay-1">
-              ElectroPower + Grupo Galán
+              ElectroPower + Grupo Galan
             </h1>
 
             <div className="news-divider fade-in-up delay-2">
@@ -88,7 +89,7 @@ const Noticias = () => {
 
           <div className="noticias-content">
             <p className="fade-in-up delay-4">
-              <strong>Electropower</strong> y <strong>Grupo Galán</strong> unen
+              <strong>Electropower</strong> y <strong>Grupo Galan</strong> unen
               su experiencia y capacidades para potenciar la comercialización,
               instalación y servicio integral de grupos electrógenos
               domiciliarios e industriales, abarcando un rango de potencias
@@ -98,7 +99,7 @@ const Noticias = () => {
             <p className="fade-in-up delay-5">
               Esta alianza estratégica surge con el objetivo de ofrecer un
               servicio más amplio, eficiente y profesional, integrando la
-              trayectoria de Grupo Galán en el mercado domiciliario e industrial
+              trayectoria de Grupo Galan en el mercado domiciliario e industrial
               con la sólida estructura técnica y operativa de Electropower.
             </p>
 
@@ -132,7 +133,7 @@ const Noticias = () => {
                 rel="noopener noreferrer"
                 className="link-galan"
               >
-                Conocé más sobre Grupo Galán →
+                Conocé más sobre Grupo Galan →
               </a>
             </div>
 
@@ -144,7 +145,6 @@ const Noticias = () => {
                   className="logo-card"
                   aria-label="ElectroPower"
                   onClick={(e) => {
-                    
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
@@ -162,11 +162,11 @@ const Noticias = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="logo-card"
-                  aria-label="Grupo Galán"
+                  aria-label="Grupo Galan"
                 >
                   <img
                     src="/logos/galan.png"
-                    alt="Logo de Grupo Galán"
+                    alt="Logo de Grupo Galan"
                     loading="lazy"
                     decoding="async"
                   />
@@ -178,7 +178,7 @@ const Noticias = () => {
           {/* Galería */}
           <div className="noticias-galeria">
             <h2 className="title fade-in-up delay-1">
-              Modelos destacados de Grupo Galán
+              Modelos destacados de Grupo Galan
             </h2>
 
             <div className="news-divider fade-in-up delay-2">
@@ -239,6 +239,8 @@ const Noticias = () => {
           )}
         </div>
       </section>
+
+      <WhatsAppButton />
 
       <Footer />
     </>

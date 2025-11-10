@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+   const scrollTop = () => {
+     window.scrollTo({ top: 0, behavior: "smooth" });
+   };
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -50,7 +54,7 @@ const Footer = () => {
               <h4>Servicios</h4>
               <ul>
                 <li>
-                  <Link to="/servicios#instalaciones">
+                  <Link to="/servicios#instalaciones" onClick={scrollTop}>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -64,7 +68,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/servicios#refrigeracion">
+                  <Link to="/servicios#refrigeracion" onClick={scrollTop}>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -78,7 +82,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/servicios#transformadores">
+                  <Link to="/servicios#transformadores" onClick={scrollTop}>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -92,7 +96,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/servicios#construccion">
+                  <Link to="/servicios#construccion" onClick={scrollTop}>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -286,10 +290,10 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>© {currentYear} ElectroPower. Todos los derechos reservados.</p>
           <p>
-            Desarrollado por{' '}
-            <a 
-              href="https://www.uxnicorp.com.ar" 
-              target="_blank" 
+            Desarrollado por{" "}
+            <a
+              href="https://www.uxnicorp.com.ar"
+              target="_blank"
               rel="noopener noreferrer"
               className="uxnicorp-link"
             >

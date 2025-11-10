@@ -148,11 +148,7 @@ const Navbar = () => {
           <li>
             <button onClick={goToGallery}>Galería</button>
           </li>
-
-          <li>
-            <button onClick={goToTerms}>Términos</button>
-          </li>
-
+      
           <li>
             <button onClick={goToNoticias}>Noticias</button>
           </li>
