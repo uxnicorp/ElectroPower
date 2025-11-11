@@ -147,53 +147,33 @@ const Gallery = () => {
     },
     {
       id: 21,
-      src: new URL('../../assets/imagenGaleria(21).jpg', import.meta.url).href,
-      title: 'Canalización Eléctrica',
-      description: 'Bandejas portacables y ductos',
-      category: 'instalación'
+      src: new URL('../../assets/imagenGaleria(22).jpeg', import.meta.url).href,
+      title: 'Instalación Industrial en Altura',
+      description: 'Trabajo en espacios industriales con máxima seguridad',
+      category: 'industrial'
     },
     {
       id: 22,
-      src: new URL('../../assets/imagenGaleria(22).jpg', import.meta.url).href,
-      title: 'Puesta en Servicio',
-      description: 'Pruebas y arranque de sistemas',
-      category: 'instalación'
-    },
-    {
-      id: 23,
-      src: new URL('../../assets/imagenGaleria(23).jpg', import.meta.url).href,
-      title: 'Obras Finalizadas',
-      description: 'Proyectos completados con éxito',
+      src: new URL('../../assets/imagenGaleria(23).jpeg', import.meta.url).href,
+      title: 'Equipo ElectroPower en Acción',
+      description: 'Nuestro equipo trabajando en instalaciones deportivas',
       category: 'comercial'
     },
     {
-      id: 24,
+      id: 23,
       src: new URL('../../assets/imagenGaleria(24).jpeg', import.meta.url).href,
       title: 'Instalación de Transformador en Altura',
       description: 'Montaje de transformador trifásico con grúa hidráulica',
       category: 'industrial'
     },
     {
-      id: 25,
+      id: 24,
       src: new URL('../../assets/imagenGaleria(25).jpeg', import.meta.url).href,
       title: 'Instalación de Tablero Eléctrico Trifásico',
       description: 'Montaje de transformador de distribución en campo',
       category: 'instalación'
     },
-    {
-      id: 26,
-      src: new URL('../../assets/imagenGaleria(26).jpeg', import.meta.url).href,
-      title: 'Excavación para Cableado Subterráneo',
-      description: 'Trabajo de zanjeo para tendido de cables de media tensión',
-      category: 'instalación'
-    },
-    {
-      id: 27,
-      src: new URL('../../assets/imagenGaleria(27).jpeg', import.meta.url).href,
-      title: 'Mantenimiento Nocturno en Media Tensión',
-      description: 'Trabajo en altura con hidroelevador en líneas de distribución',
-      category: 'mantenimiento'
-    }
+
   ];
 
   const openModal = (image) => {
