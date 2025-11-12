@@ -223,15 +223,15 @@ const Contact = () => {
               </div>
 
               <div className="form-buttons">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="btn btn-whatsapp"
                   onClick={handleWhatsAppSubmit}
                 >
                   💬 Enviar por WhatsApp
                 </button>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="btn btn-email"
                   onClick={handleEmailSubmit}
                 >
@@ -295,7 +295,7 @@ const Contact = () => {
                 </div>
                 <div className="info-details">
                   <h4>Ubicación</h4>
-                  <p>El Callao 733, Escobar, Buenos Aires</p>
+                  <p>Hipólito Yrigoyen 450, Matheu, Buenos Aires</p>
                 </div>
               </div>
 

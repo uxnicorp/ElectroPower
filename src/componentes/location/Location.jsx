@@ -10,7 +10,7 @@ const Location = () => {
           <div className="location-divider"></div>
 
           <p className="location-subtitle">
-            Estratégicamente ubicados en Escobar para brindarte un servicio
+            Estratégicamente ubicados en Matheu para brindarte un servicio
             rápido y eficiente en toda la zona norte de Buenos Aires y CABA.
             Además brindamos nuestros servicios a toda la Argentina.
           </p>
@@ -22,7 +22,7 @@ const Location = () => {
               <h3 className="info-title">Nuestra Dirección</h3>
               <p className="info-text">
                 <strong>ElectroPower</strong> tiene su base operativa en{" "}
-                <strong>El Callao 733, Escobar, Buenos Aires</strong>.
+                <strong>Hipólito Yrigoyen 450, Matheu, Buenos Aires</strong>.
               </p>
               <div className="info-highlights">
                 <div className="highlight-item">
@@ -36,7 +36,7 @@ const Location = () => {
                     <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                     <polyline points="9 22 9 12 15 12 15 22" />
                   </svg>
-                  <span>El Callao 733, Escobar, Buenos Aires</span>
+                  <span>Hipólito Yrigoyen 450, Matheu, Buenos Aires</span>
                 </div>
                 <div className="highlight-item">
                   <svg
@@ -74,7 +74,7 @@ const Location = () => {
           <div className="location-map">
             <div className="map-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.3587370230493!2d-58.7201593473031!3d-34.49378857713847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca2960f23b915%3A0x3ec0ee4d32be3a61!2sEl%20Callao%20733%2C%20B1615DCP%20Grand%20Bourg%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1761954739323!5m2!1ses!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3294.1227840624188!2d-58.79170486551942!3d-34.34735305866982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb61b0fe0941e1%3A0x7a0856796bc167fc!2sHip%C3%B3lito%20Yrigoyen%20450%2C%20B1627%20Matheu%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1762909568440!5m2!1ses!2sar"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: "16px" }}
