@@ -1,62 +1,287 @@
-
+// src/paginas/noticias/Noticias.jsx
 import "./Noticias.css";
 import Navbar from "../../componentes/navbar/Navbar.jsx";
 import Footer from "../../componentes/footer/Footer.jsx";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import WhatsAppButton from "../../componentes/whatsappbutton/WhatsAppButton.jsx";
+import rayito from "../../assets/rayito.png"; 
+
+const gruposElectrogenos = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Honda 7 Kva",
+    description: "Grupo Electrógeno",
+    items: [
+      "Tipo de Motor: Honda GX390 - OHV 4 Tiempos - Refrigerado por aire",
+      "Cilindrada: 389 cm3",
+      "Potencia Neta: 11,7 HP (8,7 Kw) a 3600 rpm",
+      "Encendido: Transistorizado",
+      "Arranque: Eléctricorico",
+      "Frecuencia C.A.: 50 Hz.",
+      "Voltaje C.A.: 220 V",
+      "Potencia Máxima C.A.: 7 kVA",
+      "Potencia Nominal C.A.: 6 kVA",
+      "Salida de C.C.: Si",
+      "Chapa: Galvanizada",
+      "Paneles: Insonorizados e ignífugos",
+      "Pintura: Polvo horneado",
+      "Ancho, Largo, Alto, Peso: 1050 mm, 660 mm, 765 mm, 190 Kg",
+      "Lógica de control y medición: DKG 207 / Opcional Deepsea 4520 o similar",
+      "Cargador de batería tipo flote: 4A 12V",
+      "Contactores: 26 Amper",
+      "Regulación de voltaje: Compound",
+      "Indicación: Voltímetro - Amperímetro - Frecuencímetro - Cuenta hs Digital",
+      "Protección C.A.: Termomagnética",
+      "Consumo de combustible (gas natural): 3.3 metros/hora (caudal máximo)",
+      "Calorías aproximadas: 29 kCal",
+      "Sistema de alimentación: Regulador de presión proporcional cero por demanda",
+      "Sistema de seguridad: Solenoide de corte - Jefferson Mod. 1335 c/ bob. de continua",
+      "Capacidad de aceite: 1,9 Lts.",
+      "Alerta de aceite: Si",
+    ],
+    badge: "Monofásico",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Honda 10 Kva",
+    description: "Grupo Electrógeno",
+    items: [
+      "Tipo de Motor: GX630 - OHV 4 Tiempos - Refrigerado por aire",
+      "Cilindrada: 614 cm3",
+      "Potencia Neta: 21 HP (15,5 Kw) a 3600 rpm",
+      "Encendido: Transistorizado",
+      "Arranque: Eléctrico",
+      "Frecuencia C.A.: 50 Hz.",
+      "Voltaje C.A.: 220 V",
+      "Potencia Máxima C.A.: 10 KVA",
+      "Potencia Nominal C.A.: 8 KVA",
+      "Salida de C.C.: No",
+      "Chapa: Galvanizada",
+      "Paneles: Insonorizados e ignífugos",
+      "Pintura: Polvo horneado",
+      "Ancho, Largo, Alto, Peso: 600 mm, 800 mm, 850 mm, 120 Kg",
+      "Lógica de control y medición: DKG 207 / Opcional Deepsea 4520",
+      "Cargador de batería tipo flote: 10A 12V",
+      "Contactores: 26 Ampere",
+      "Regulación de voltaje: Compound",
+      "Indicación: Voltímetro - Amperímetro - Frecuencímetro",
+      "Protección C.A.: Termomagnética",
+      "Capacidad de combustible: 22 lts.",
+      "Consumo Específico de Combustible: 5,5 lts. /hs.",
+      "Capacidad de aceite: 1,8 lts.",
+      "Eco Throttle: No",
+      "Indicador Nivel de Combustible: No",
+      "Alerta de aceite: Si",
+      "Salida C.C.: No",
+      "Regulador de voltaje: Compound",
+      "Protección C.A.: Fusible de reposición manual",
+    ],
+    badge: "Monofásico",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Honda 13 Kva",
+    description:
+      "Grupo Electrógeno - Cabinado, a gas con tablero de transferencia automático",
+    items: [
+      "Tipo de Motor: GX690 - OHV 4 Tiempos - Refrigerado por aire",
+      "Cilindrada: 688 cm3",
+      "Potencia Neta: 22,1 HP (16,5 Kw) a 3600 rpm",
+      "Encendido: CDI",
+      "Arranque: Eléctrico",
+      "Frecuencia C.A.: 50 Hz.",
+      "Voltaje C.A.: 220 V",
+      "Potencia Máxima C.A.: 13 KVA",
+      "Potencia Nominal C.A.: 10,4 KVA",
+      "Capacidad de aceite: 1,8 lts.",
+      "Chapa: Galvanizada",
+      "Para intemperie: Si",
+      "Pintura: Polvo horneado",
+      "Ancho, Largo, Alto, Peso: 1200 mm, 660 mm, 810 mm, 215 Kg",
+      "Lógica de control y medición: DKG 207 / Opcional Deepsea 4520 o similar",
+      "Cargador de batería tipo flote: 4A 12V",
+      "Contactores: 26 Ampere",
+      "Regulación de voltaje: Compound",
+      "Indicaciones: Voltaje de línea, voltaje de grupo y frecuentímetro",
+      "Protección C.A.: Termomagnética",
+      "Consumo de gas: 5.78 metros/hora (caudal máximo)",
+      "Alerta de Aceite: Si",
+      "Sistema de alimentación: Regulador de presión proporcional cero por demanda",
+      "Sistema de seguridad: Solenoide de corte – Jefferson Mod. 1335 c/ bob. de continua",
+      "Indicaciones: Voltaje de línea, voltaje de grupo y frecuentímetro",
+      "Protección C.A.: Fusible térmico de reposición manual",
+    ],
+    badge: "Monofásico",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Honda 14 Kva",
+    description:
+      "Grupo Electrógeno - Cabinado, a gas con tablero de transferencia automático",
+    items: [
+      "Tipo de Motor: GX690 - OHV 4 Tiempos - Refrigerado por aire",
+      "Cilindrada: 688 cm3",
+      "Potencia Neta: 22,1 HP (16,5 Kw) a 3600 rpm",
+      "Encendido: CDI",
+      "Arranque: Eléctrico",
+      "Frecuencia C.A.: 50 Hz.",
+      "Voltaje C.A.: 380/ 220 V",
+      "Potencia Máxima C.A.: 14 KVA",
+      "Potencia Nominal C.A.: 11.5 KVA",
+      "Capacidad de aceite: Si",
+      "Chapa: Galvanizada",
+      "Para intemperie: Insonorizados e ignífugos",
+      "Pintura: Polvo horneado",
+      "Ancho, Largo, Alto, Peso: 1200 mm, 660 mm, 810 mm, 215 Kg",
+      "Lógica de control y medición: DKG 207 / Opcional Deepsea 4520",
+      "Cargador de batería tipo flote: 4A 12V",
+      "Contactores: 26 Ampere",
+      "Regulación de voltaje: Compound",
+      "Indicación: Voltaje de línea, voltaje de grupo y frecuentímetro",
+      "Protección C.A.: Termomagnética",
+      "Consumo de combustible (gas natural): 5.78 metros/hora (caudal máximo)",
+      "Alerta de Aceite: Si",
+      "Salida C.C.: Regulador de presión proporcional “cero” por demanda",
+      "Regulador de voltaje: Solenoide de corte - Jefferson Mod. 1335 c/bob. de cont.",
+      "Capacidad de aceite: 1,8 lts",
+      "Protección C.A.: Si",
+    ],
+    badge: "Trifásico",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Honda 16 Kva",
+    description:
+      "Grupo Electrógeno - Cabinado, a gas con tablero de transferencia automático",
+    items: [
+      "Tipo de Motor: GX800 - OHV 4 Tiempos - Refrigerado por aire",
+      "Cilindrada: 788 cm3",
+      "Potencia Neta: 26 HP ",
+      "Encendido: CDI",
+      "Frecuencia C.A.: 50 Hz.",
+      "Voltaje C.A.: 380/ 220 V",
+      "Potencia Máxima C.A.: 16 KVA",
+      "Potencia Nominal C.A.: 13.5 KVA",
+      "Chapa: Galvanizada",
+      "Para intemperie: Insonorizados e ignífugos",
+      "Pintura: Polvo horneado",
+      "Ancho, Largo, Alto, Peso: 1200 mm, 660 mm, 810 mm, 215 Kg",
+      "Lógica de control y medición: DKG 207 ",
+      "Cargador de batería tipo flote: 4A 12V",
+      "Contactores: 26 Ampere",
+      "Regulación de voltaje: Compound",
+      "Indicación: Voltaje de línea, voltaje de grupo y frecuentímetro",
+      "Protección C.A.: Termomagnética",
+      "Consumo de combustible (gas natural): 5.78 metros/hora (caudal máximo)",
+      "Alerta de Aceite: Si",
+      "Seguridad Gas: Regulador de presión proporcional “cero” por demanda",
+      "Incluye: Solenoide de corte – Jefferson Mod. 1335 c/ bob. de continua",
+      "Capacidad de aceite: 1,8 lts",
+      "Aviso de sevicio y cuentas horas: Si",
+    ],
+    badge: "Trifásico",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Honda 16 Kva",
+    description:
+      "Grupo Electrógeno - Cabinado, a gas con tablero de transferencia automático",
+    items: [
+      "Tipo de Motor: GX800 - OHV 4 Tiempos - Refrigerado por aire",
+      "Cilindrada: 788 cm3",
+      "Potencia Neta: 26 HP ",
+      "Encendido: CDI",
+      "Frecuencia C.A.: 50 Hz.",
+      "Voltaje C.A.: 380/ 220 V",
+      "Potencia Máxima C.A.: 16 KVA",
+      "Potencia Nominal C.A.: 13.5 KVA",
+      "Chapa: Galvanizada",
+      "Para intemperie: Insonorizados e ignífugos",
+      "Pintura: Polvo horneado",
+      "Ancho, Largo, Alto, Peso: 1200 mm, 660 mm, 810 mm, 215 Kg",
+      "Lógica de control y medición: DKG 207 ",
+      "Cargador de batería tipo flote: 4A 12V",
+      "Contactores: 26 Ampere",
+      "Regulación de voltaje: Compound",
+      "Indicación: Voltaje de línea, voltaje de grupo y frecuentímetro",
+      "Protección C.A.: Termomagnética",
+      "Consumo de combustible (gas natural): 5.78 metros/hora (caudal máximo)",
+      "Alerta de Aceite: Si",
+      "Seguridad Gas: Regulador de presión proporcional “cero” por demanda",
+      "Incluye: Solenoide de corte – Jefferson Mod. 1335 c/ bob. de continua",
+      "Capacidad de aceite: 1,8 lts",
+      "Aviso de sevicio y cuentas horas: Si",
+    ],
+    badge: "Monofásico",
+  },
+];
 
 const Noticias = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
 
-  
   useEffect(() => {
     document.body.classList.add("page-noticias");
     return () => document.body.classList.remove("page-noticias");
   }, []);
-
-  // Cerrar modal con tecla ESC
-  useEffect(() => {
-    const onEsc = (e) => e.key === "Escape" && setSelectedImage(null);
-    window.addEventListener("keydown", onEsc);
-    return () => window.removeEventListener("keydown", onEsc);
-  }, []);
-
-  
-  const galanImages = [
-    {
-      id: 1,
-      src: "/grupogalan/honda-7kva.jpg",
-      title: "Honda 7 kVA",
-      description: "Grupo electrógeno monofásico",
-    },
-    {
-      id: 2,
-      src: "/grupogalan/honda-10kva.jpg",
-      title: "Honda 10 kVA",
-      description: "Grupo electrógeno monofásico",
-    },
-    {
-      id: 3,
-      src: "/grupogalan/honda-13kva.jpg",
-      title: "Honda 13 kVA",
-      description: "Cabinado con tablero automático",
-    },
-    {
-      id: 4,
-      src: "/grupogalan/honda-14kva.jpg",
-      title: "Honda 14 kVA",
-      description: "Trifásico con tablero automático",
-    },
-    {
-      id: 5,
-      src: "/grupogalan/honda-16kva.jpg",
-      title: "Honda 16 kVA",
-      description: "Monofásico y trifásico",
-    },
-  ];
-
-  const openModal = (img) => setSelectedImage(img);
-  const closeModal = () => setSelectedImage(null);
 
   return (
     <>
@@ -85,7 +310,6 @@ const Noticias = () => {
               Argentina.
             </p>
           </div>
-
 
           <div className="noticias-content">
             <p className="fade-in-up delay-4">
@@ -175,7 +399,7 @@ const Noticias = () => {
             </div>
           </div>
 
-          {/* Galería */}
+          {/* Título */}
           <div className="noticias-galeria">
             <h2 className="title fade-in-up delay-1">
               Modelos destacados de Grupo Galan
@@ -186,57 +410,55 @@ const Noticias = () => {
               <span className="nline"></span>
               <span className="ndot ndot-right"></span>
             </div>
-
-            <div className="galeria-grid">
-              {galanImages.map((img, idx) => (
-                <div
-                  key={img.id}
-                  className="galeria-item fade-in-up"
-                  style={{ animationDelay: `${0.2 + idx * 0.08}s` }}
-                  onClick={() => openModal(img)}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.title}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="galeria-overlay">
-                    <h4>{img.title}</h4>
-                    <p>{img.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Modal de imagen */}
-          {selectedImage && (
-            <div className="modal" onClick={closeModal}>
+          {/* Cards */}
+
+          <div className="noticias-grid">
+            {gruposElectrogenos.map((gruposElectrogenos, index) => (
               <div
-                className="modal-content"
-                onClick={(e) => e.stopPropagation()}
+                key={index}
+                className="noticias-card"
+                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <button
-                  className="modal-close"
-                  onClick={closeModal}
-                  aria-label="Cerrar imagen"
-                >
-                  ✕
-                </button>
-                <img
-                  src={selectedImage.src}
-                  alt={selectedImage.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="modal-caption">
-                  <h4>{selectedImage.title}</h4>
-                  <p>{selectedImage.description}</p>
-                </div>
+                <div className="noticias-badge">{gruposElectrogenos.badge}</div>
+                <div className="noticias-icon">{gruposElectrogenos.icon}</div>
+                <h3 className="noticias-title">{gruposElectrogenos.title}</h3>
+                <p className="noticias-description">
+                  {gruposElectrogenos.description}
+                </p>
+                <ul className="noticias-list">
+                  {gruposElectrogenos.items.map((item, idx) => (
+                    <li key={idx}>
+                      <img src={rayito} alt="Check" className="item-rayito" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
+            ))}
+          </div>
+
+          {/* Imagenes Grupo Galan */}
+          <div className="noticias-banners">
+            <div className="noticias-banner">
+              <img
+                src="/grupogalan/electrogeno1.jpg"
+                alt="Grupo Electrógeno"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-          )}
+
+            <div className="noticias-banner">
+              <img
+                src="/grupogalan/electrogeno2.png"
+                alt="Grupo Electrógeno"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
